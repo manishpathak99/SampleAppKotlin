@@ -102,17 +102,17 @@ dependencies {
             {
                 transitive = true;
             }
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'io.reactivex.rxjava2:rxjava:2.0.6'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
     testCompile "junit:junit:$rootProject.ext.junitVersion"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintVersion"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.github.d-max:spots-dialog:0.7@aar'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.firebase:firebase-jobdispatcher-with-gcm-dep:0.6.0'
-    compile 'com.airbnb.android:lottie:2.1.0'
+    compile "com.android.support:multidex:$rootProject.ext.multidexVersion"
+    compile "com.github.d-max:spots-dialog:$rootProject.ext.dialogProgressVersion@aar"
+    compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    compile "com.firebase:firebase-jobdispatcher-with-gcm-dep:$rootProject.ext.jobdispatcherVersion"
+    compile "com.airbnb.android:lottie:$rootProject.ext.lottieVersion"
 
 }
 apply plugin: 'com.google.gms.google-services'
