@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:ignore="UnknownIdInLayout,RtlSymmetry,RtlHardcoded,ObsoleteLayoutParam,MissingPrefix">
+
+    <ScrollView
+        android:id="@+id/scrollviewlogin"
+        style="@style/parentScrollView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardview_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/margin_2x"
+                android:layout_marginRight="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:background="@android:color/white"
+                android:visibility="visible"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_3x"
+                    android:layout_marginLeft="@dimen/margin_3x"
+                    android:layout_marginRight="@dimen/margin_3x"
+                    android:orientation="vertical">
+
+
+                    <com.sampleapp.views.RemoveErrorEditText
+                        android:id="@+id/edtUserEmail"
+                        style="@style/EditTextRegistration"
+                        fontPath="fonts/roboto_regular.ttf"
+                        android:layout_marginTop="@dimen/margin_2x"
+                        android:hint="Demo email"
+                        android:inputType="textEmailAddress" />
+
+                    <com.sampleapp.views.RemoveErrorEditText
+                        android:id="@+id/edtUserPassword"
+                        style="@style/EditTextRegistration"
+                        fontPath="fonts/roboto_regular.ttf"
+                        android:layout_marginTop="@dimen/margin_2x"
+                        android:hint="Demo password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword" />
+
+                    <com.sampleapp.views.TypeFaceButton
+                        android:id="@+id/btnlogin_signin"
+                        app:font_type="roboto_slab_bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/margin_1x"
+                        android:layout_marginTop="@dimen/margin_2x"
+                        android:text="Demo Sign in"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_medium" />
+
+
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/margin_2x"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_margin="@dimen/margin_3x"
+                android:layout_alignParentBottom="true">
+
+
+                <com.sampleapp.views.TypeFaceTextView
+                    android:layout_marginLeft="@dimen/margin_1x"
+                    app:font_type="roboto_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="Sample Text"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="@dimen/text_small" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

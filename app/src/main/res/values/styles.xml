@@ -1,0 +1,173 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@color/colorAccent</item>
+
+        <!-- Active thumb color & Active track color(30% transparency) -->
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <!-- Inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/colorTextGrey</item>
+        <!-- Inactive track color(30% transparency) -->
+        <item name="android:colorForeground">@color/colorTextGrey</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeHome" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@color/colorAccent</item>
+
+        <!-- Active thumb color & Active track color(30% transparency) -->
+        <item name="colorControlActivated">@color/orangerating</item>
+        <!-- Inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/colorTextGrey</item>
+        <!-- Inactive track color(30% transparency) -->
+        <item name="android:colorForeground">@color/colorTextGrey</item>
+
+    </style>
+
+    <!-- Splash Activity theme. -->
+    <style name="Theme.Splash" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <!--button style for social buttons-->
+    <style name="SocialButton">
+        <item name="android:textAllCaps" tools:targetApi="ice_cream_sandwich">false</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/text_very_small</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="textSkip">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/margin_4x</item>
+        <item name="android:textAllCaps" tools:targetApi="ice_cream_sandwich">true</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+
+    <style name="cardViewRegistration">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/margin_10x</item>
+    </style>
+
+    <style name="LinearCardContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/margin_15x</item>
+    </style>
+
+    <style name="TextInputTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:theme">@style/EditTextHint</item>
+        <item name="android:layout_height">@dimen/margin_10x</item>
+    </style>
+
+
+    <!--EditText color-->
+    <style name="EditTextHint" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">@color/colorHint</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@color/colorHint</item>
+        <item name="colorControlHighlight">@color/colorHint</item>
+        <item name="android:textColorHighlight">@color/colorHint</item>
+        <item name="android:textColorLink">@color/colorHint</item>
+
+    </style>
+
+
+    <!--EditText style for login an registration-->
+    <style name="EditTextRegistration">
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginLeft">@dimen/margin_1x</item>
+        <item name="android:layout_marginRight">@dimen/margin_1x</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">@dimen/margin_1x</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColorHint">@color/colorHint</item>
+        <item name="android:theme">@style/TextInputTheme</item>
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="parentScrollView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="parentLinear">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>.
+        <item name="android:padding">1dp</item>
+    </style>
+
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="ForgotPasswodDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">         <!-- Used for the buttons -->
+        <item name="android:textColorPrimary">@android:color/black
+        </item>         <!-- Used for the background -->
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="EditTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">5dp</item>
+        <!-- Hint color and label color in FALSE state -->
+
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorControlNormal">#1A000000</item>
+        <item name="colorControlActivated">@color/colorTwitterButton</item>
+    </style>
+
+    <declare-styleable name="TypeFaceTextView">
+        <attr name="font_type" format="enum">
+            <enum name="roboto_black" value="1" />
+            <enum name="roboto_black_italic" value="2" />
+            <enum name="roboto_bold" value="3" />
+            <enum name="roboto_bold_italic" value="4" />
+            <enum name="roboto_italic" value="5" />
+            <enum name="roboto_light" value="6" />
+            <enum name="roboto_light_italic" value="7" />
+            <enum name="roboto_medium" value="8" />
+            <enum name="roboto_medium_italic" value="9" />
+            <enum name="roboto_regular" value="10" />
+            <enum name="roboto_thin" value="11" />
+            <enum name="roboto_thin_italic" value="12" />
+            <enum name="roboto_slab_bold" value="13" />
+            <enum name="roboto_slab_light" value="14" />
+            <enum name="roboto_slab_regular" value="15" />
+            <enum name="roboto_slab_thin" value="16" />
+        </attr>
+    </declare-styleable>
+
+
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert" />
+
+
+</resources>

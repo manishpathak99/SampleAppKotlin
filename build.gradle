@@ -1,0 +1,52 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = '1.1.2-5'
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+        classpath 'com.google.gms:google-services:3.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+allprojects {
+    repositories {
+        maven { url "http://dl.bintray.com/populov/maven" }
+        jcenter()
+        mavenCentral()
+    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+ext {
+    minSdkVersion = 16
+    targetSdkVersion = 26
+    compileSdkVersion = 25
+    buildToolsVersion = '25.0.1'
+    supportLibraryVersion = '25.0.1'
+    daggerVersion = '2.5'
+    retrofitVersion = '2.2.0'
+    rxJavaVersion = '2.0.6'
+    rxAndroidVersion = '2.0.1'
+    butterknifeVersion = '8.2.1'
+    loggerVersion = '3.3.1'
+    timberVersion = '4.1.2'
+    playServiceVersion = '11.0.4'
+    calligraphyVersion = '2.2.0'
+    annotationVersion = '10.0-b28'
+    routeVersion = '1.1.0'
+    picassoVersion = '2.5.2'
+    glideVersion = '3.7.0'
+    komenskyValidation = '0.9.4'
+    facebookVersion = '4.15.0'
+    crashVersion = '2.6.2'
+    junitVersion = '4.12'
+}
