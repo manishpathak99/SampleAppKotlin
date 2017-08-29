@@ -54,16 +54,16 @@ Utils classes.
     dependencies {
         classpath 'io.fabric.tools:gradle:1.24.0'
     }
-}
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'io.fabric'
-apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'me.tatarka.retrolambda'
-apply plugin: 'android-apt'
+    }
+    apply plugin: 'com.android.application'
+    apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-android-extensions'
+    apply plugin: 'io.fabric'
+    apply plugin: 'com.neenbedankt.android-apt'
+    apply plugin: 'me.tatarka.retrolambda'
+    apply plugin: 'android-apt'
 
-android {
+    android {
     signingConfigs {
         configprod {
             keyAlias 'sampleapp'
@@ -76,7 +76,7 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
-//app versioning
+    //app versioning
     def versionMajor = 1
     def versionMinor = 0
     def versionPatch = 0
@@ -112,17 +112,17 @@ android {
         abortOnError false
     }
     buildToolsVersion rootProject.ext.buildToolsVersion
-}
+    }
 
-repositories {
+    repositories {
     maven {
         url "https://jitpack.io"
     }
     maven { url 'https://maven.fabric.io/public' }
     mavenCentral()
-}
+    }
 
-dependencies {
+    dependencies {
 
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
@@ -162,8 +162,8 @@ dependencies {
     compile "com.firebase:firebase-jobdispatcher-with-gcm-dep:$rootProject.ext.jobdispatcherVersion"
     compile "com.airbnb.android:lottie:$rootProject.ext.lottieVersion"
 
-}
-apply plugin: 'com.google.gms.google-services'
+    }
+    apply plugin: 'com.google.gms.google-services'
 
     
 ##DONATIONS
