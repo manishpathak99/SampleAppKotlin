@@ -52,19 +52,31 @@ Utils classes.
     }
 
     dependencies {
-        classpath 'io.fabric.tools:gradle:1.+'
+        classpath 'io.fabric.tools:gradle:1.24.0'
     }
-    }
-    apply plugin: 'com.android.application'
-    apply plugin: 'io.fabric'
-    apply plugin: 'com.neenbedankt.android-apt'
-    apply plugin: 'me.tatarka.retrolambda'
+}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.fabric'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'android-apt'
 
-    android {
+android {
+    signingConfigs {
+        configprod {
+            keyAlias 'sampleapp'
+            keyPassword 'welcome'
+            storeFile file('/Users/saveendhiman/Documents/sampleapp/keyhash.jks')
+            storePassword 'welcome'
+        }
+    }
+
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
 
-    //app versioning
+//app versioning
     def versionMajor = 1
     def versionMinor = 0
     def versionPatch = 0
@@ -73,12 +85,19 @@ Utils classes.
     defaultConfig {
         applicationId "com.sampleapp"
         minSdkVersion rootProject.ext.minSdkVersion
+        vectorDrawables.useSupportLibrary = true
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
     }
     buildTypes {
         release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            signingConfig signingConfigs.configprod
+        }
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -88,16 +107,23 @@ Utils classes.
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
+    buildToolsVersion rootProject.ext.buildToolsVersion
+}
 
-    repositories {
+repositories {
     maven {
         url "https://jitpack.io"
     }
     maven { url 'https://maven.fabric.io/public' }
-    }
+    mavenCentral()
+}
 
-    dependencies {
+dependencies {
+
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
     compile "com.android.support:design:$rootProject.supportLibraryVersion"
@@ -106,25 +132,39 @@ Utils classes.
     compile "com.google.dagger:dagger:$rootProject.daggerVersion"
     compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
     compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
-    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.ext.retrofitVersion"
     compile "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.loggerVersion"
-    compile "io.reactivex:rxjava:$rootProject.ext.rxJavaVersion"
-    compile "io.reactivex:rxandroid:$rootProject.ext.rxAndroidVersion"
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
     compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     apt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
     compile "com.jakewharton.timber:timber:$rootProject.ext.timberVersion"
     compile "com.google.android.gms:play-services-location:$rootProject.ext.playServiceVersion"
+    compile "com.google.android.gms:play-services-places:$rootProject.ext.playServiceVersion"
     compile "com.google.firebase:firebase-messaging:$rootProject.ext.playServiceVersion"
     compile "com.google.android.gms:play-services-maps:$rootProject.ext.playServiceVersion"
+    compile "com.google.firebase:firebase-core:$rootProject.ext.playServiceVersion"
     compile "uk.co.chrisjenx:calligraphy:$rootProject.ext.calligraphyVersion"
     compile "com.squareup.picasso:picasso:$rootProject.ext.picassoVersion"
     compile "eu.inmite.android.lib:android-validation-komensky:$rootProject.ext.komenskyValidation@aar"
-    compile("com.crashlytics.sdk.android:crashlytics:$rootProject.ext.crashVersion@aar") {
-        transitive = true;
-    }
-	
-    }
-    apply plugin: 'com.google.gms.google-services'
+    compile "com.facebook.android:facebook-android-sdk:$rootProject.ext.facebookVersion"
+    compile("com.crashlytics.sdk.android:crashlytics:$rootProject.ext.crashVersion@aar")
+            {
+                transitive = true;
+            }
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
+    testCompile "junit:junit:$rootProject.ext.junitVersion"
+    compile "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintVersion"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "com.android.support:multidex:$rootProject.ext.multidexVersion"
+    compile "com.github.d-max:spots-dialog:$rootProject.ext.dialogProgressVersion@aar"
+    compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    compile "com.firebase:firebase-jobdispatcher-with-gcm-dep:$rootProject.ext.jobdispatcherVersion"
+    compile "com.airbnb.android:lottie:$rootProject.ext.lottieVersion"
+
+}
+apply plugin: 'com.google.gms.google-services'
+
     
 ##DONATIONS
 
