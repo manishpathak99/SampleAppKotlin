@@ -1,26 +1,30 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = '1.1.3-2'
+    ext.kotlin_version = '1.1.4'
     repositories {
         jcenter()
         mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
-        classpath 'com.google.gms:google-services:3.0.0'
+        classpath 'com.android.tools.build:gradle:3.0.0-beta3'
+        classpath 'com.google.gms:google-services:3.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
+        classpath 'io.fabric.tools:gradle:1.24.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 allprojects {
     repositories {
+        maven {
+            url "https://jitpack.io"
+        }
+        maven { url 'https://maven.fabric.io/public' }
         maven { url "http://dl.bintray.com/populov/maven" }
         jcenter()
         mavenCentral()
+        google()
     }
 }
 task clean(type: Delete) {
@@ -29,30 +33,30 @@ task clean(type: Delete) {
 ext {
     minSdkVersion = 16
     targetSdkVersion = 26
-    compileSdkVersion = 25
-    buildToolsVersion = '25.0.1'
-    supportLibraryVersion = '25.3.1'
+    compileSdkVersion = 26
+    buildToolsVersion = '26.0.1'
+    supportLibraryVersion = '26.0.1'
     daggerVersion = '2.5'
     retrofitVersion = '2.2.0'
     rxJavaVersion = '2.0.6'
     rxAndroidVersion = '2.0.1'
-    butterknifeVersion = '8.2.1'
+    butterknifeVersion = '8.7.0'
     loggerVersion = '3.3.1'
-    timberVersion = '4.1.2'
-    playServiceVersion = '11.0.4'
+    timberVersion = '4.5.1'
+    playServiceVersion = '11.2.0'
     calligraphyVersion = '2.2.0'
     annotationVersion = '10.0-b28'
     routeVersion = '1.1.0'
     picassoVersion = '2.5.2'
     glideVersion = '3.7.0'
     komenskyValidation = '0.9.4'
-    facebookVersion = '4.15.0'
+    facebookVersion = '4.24.0'
     crashVersion = '2.6.2'
     junitVersion = '4.12'
     lottieVersion = '2.1.0'
     jobdispatcherVersion = '0.6.0'
     dialogProgressVersion = '0.7'
-    multidexVersion = '1.0.1'
+    multidexVersion = '1.0.2'
     constraintVersion = '1.0.2'
 
 }
